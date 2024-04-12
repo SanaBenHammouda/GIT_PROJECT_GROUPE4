@@ -1,0 +1,49 @@
+
+
+
+.text-field {
+    /*-fx-border-color: grey;*/
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0;
+
+}
+
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background;
+    -fx-border-color: #8560FF;
+}
+
+
+
+.text-area:focused {
+    -fx-background-color: -fx-focus-color, -fx-background;
+    -fx-border-color: #8560FF;
+}
+
+.combo-box {
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0;
+
+}
+
+.combo-box:focused {
+    -fx-background-color: -fx-focus-color, -fx-background;
+    -fx-border-color: #8560FF;
+}
+
+
+/*.my-date-picker {
+   
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0;
+
+}*/
+
+.my-date-picker:focused {
+    -fx-background-color: -fx-focus-color, -fx-background;
+    -fx-border-color: #8560FF;
+}
+

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1275.0" style="-fx-background-color: #3FAEF7; -fx-background-radius: 30px; -fx-border-radius: 30px;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ProfHomeController">
+    <!-- <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1212.0" style="-fx-background-color: #8560FF;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controllers.Controller"> -->
+    <children>
+        <VBox fx:id="VboxMenu" alignment="TOP_CENTER" prefHeight="667.0" prefWidth="258.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="9.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fx:id="imgUser" fitHeight="97.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/images/teacher_100px.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="10.0" top="50.0" />
+                    </VBox.margin>
+                </ImageView>
+                <Label fx:id="utilisateur" text="User Connecté" textFill="#e7e5e5">
+                    <VBox.margin>
+                        <Insets bottom="50.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="Cambria Bold Italic" size="14.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btnAccueil" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnAccueil_click" prefHeight="42.0" prefWidth="178.0" stylesheets="@../../resources/Styles/style.css" text="Accueil" visible="true">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/images/AccueilBlanc.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Cambria Bold Italic" size="16.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </Button>
+                <!--                <Region prefHeight="20" VBox.vgrow="ALWAYS" />-->
+
+                <Button fx:id="btnProfil_prof" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#profil_show" prefHeight="42.0" prefWidth="178.0" stylesheets="@../../resources/Styles/style.css" text="Mon profil">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/images/profilBlanc.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Cambria Bold Italic" size="16.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </Button>
+                <!--                <Region prefHeight="20" VBox.vgrow="ALWAYS" />-->
+
+                <Button fx:id="btnListes" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#GestionNote_Click" prefHeight="42.0" prefWidth="178.0" stylesheets="@../../resources/Styles/style.css" text="Notes" textFill="#e7e5e5">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/images/ListesBlanc.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Cambria Bold Italic" size="16.0" />
+                    </font>
+                </Button>
+                <!--                <Region prefHeight="20" VBox.vgrow="ALWAYS" />-->
+
+                <Button fx:id="btnAnnonce" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnAnnonce_click" prefHeight="42.0" prefWidth="178.0" stylesheets="@../../resources/Styles/style.css" text="Control">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/images/alertMessageBlanc.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="Cambria Bold Italic" size="16.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </Button>
+                <!--                <Region prefHeight="20" VBox.vgrow="ALWAYS" />-->
+
+                <Region VBox.vgrow="ALWAYS" />
+                <Button fx:id="btnLogOut" alignment="BASELINE_LEFT" graphicTextGap="22.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logOut_Click" prefHeight="31.0" prefWidth="198.0" stylesheets="@../../resources/Styles/style.css" text="Se déconnécter" underline="true">
+                    <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/images/deconnecter.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </VBox>
+        <Pane fx:id="panel_close_mini" layoutX="1169.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="676.0" prefWidth="82.0" style="-fx-background-color: white; -fx-border-radius: 30px; -fx-background-radius: 30px;">
+         <children>
+              <Button fx:id="btnMinimize" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="12.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnMinimize_Click" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: transparent; -fx-padding: 0;" stylesheets="@../../resources/Styles/style.css">
+               <graphic>
+                      <ImageView fx:id="imgViewMinimize" fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../resources/images/subtract_30px.png" />
+                          </image>
+                      </ImageView>
+               </graphic>
+              </Button>
+              <Button fx:id="btnClose" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="41.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnClose_Click" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: transparent; -fx-padding: 0;" stylesheets="@../../resources/Styles/style.css">
+               <graphic>
+                      <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@../../resources/images/close.png" />
+                      </ImageView>
+               </graphic>
+            </Button>
+         </children></Pane>
+        <Pane fx:id="panelAlert" layoutX="248.0" layoutY="-4.0" prefHeight="680.0" prefWidth="963.0" style="-fx-background-color: #F0FFFF;">
+            <children>
+                <ComboBox fx:id="cb_annonce_classe" layoutX="369.0" layoutY="132.0" prefWidth="150.0" promptText="Classe" style="-fx-border-color: #24ACF2;" styleClass="combo-box" stylesheets="@../../resources/Styles/MaterialDesign.css" />
+                <Label layoutX="122.0" layoutY="135.0" text="Rappeler les étudiants du groupe ">
+                    <font>
+                        <Font name="Arial Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="315.0" layoutY="25.0" text="Annonce aux étudiants" textFill="#6f6f6f" underline="true">
+                    <font>
+                        <Font name="Russo One" size="29.0" />
+                    </font>
+                </Label>
+                <Label layoutX="536.0" layoutY="134.0" text="qu'il y aura un examen / controle , pour le ">
+                    <font>
+                        <Font name="Arial Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="date_control" layoutX="52.0" layoutY="197.0" promptText="15/06/2020" style="-fx-background-color: transparent; -fx-border-color: #24ACF2; -fx-border-width: 0 0 1px 0;" />
+                <Label layoutX="111.0" layoutY="352.0" text="Plus de détail :">
+                    <font>
+                        <Font name="Arial Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="txt_description" layoutX="52.0" layoutY="383.0" prefHeight="217.0" prefWidth="820.0" promptText="Plus d'info à propos du controlr" style="-fx-border-color: #24ACF2;">
+                    <font>
+                        <Font name="Arial Bold Italic" size="15.0" />
+                    </font>
+                    <effect>
+                        <DropShadow color="#24acf2" radius="18.9375" width="56.75" />
+                    </effect>
+                </TextArea>
+                <Button layoutX="777.0" layoutY="623.0" mnemonicParsing="false" onAction="#annonce_soumis" prefHeight="27.0" prefWidth="95.0" style="-fx-border-radius: 10px;" stylesheets="@../../resources/Styles/LoginStyling.css" text="Soumettre !">
+                    <font>
+                        <Font name="Arial Black" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane fx:id="panelAccueil" layoutX="248.0" layoutY="-4.0" prefHeight="680.0" prefWidth="963.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fx:id="img1_Accueil" fitHeight="304.0" fitWidth="423.0" layoutX="59.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/images/messages.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="img2_Accueil" fitHeight="265.0" fitWidth="341.0" layoutX="515.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/images/news.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="407.0" layoutY="34.0" text="Accueil" textFill="#6f6f6f" underline="true">
+                    <font>
+                        <Font name="Russo One" size="29.0" />
+                    </font>
+                </Label>
+                <Label fx:id="labelinfo_Accueil" layoutX="306.0" layoutY="130.0" prefHeight="43.0" prefWidth="311.0" text="aucun annonce n'est pas partagé ." textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Montserrat-Regular" size="20.0" />
+                    </font>
+                </Label>
+                <ScrollPane fx:id="scroll" hbarPolicy="NEVER" layoutX="21.0" layoutY="139.0" prefHeight="536.0" prefWidth="855.0" style="-fx-background-color: White;" visible="false">
+                    <content>
+                        <VBox fx:id="vbox_messagerie" alignment="TOP_CENTER" minHeight="2.0" prefHeight="291.0" prefWidth="882.0" style="-fx-background-color: White;" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </Pane>
+        <Pane fx:id="Pane_ensg" layoutX="248.0" layoutY="-4.0" prefHeight="680.0" prefWidth="963.0" style="-fx-background-color: white;">
+            <children>
+                <Label fx:id="lbl_nom_complet" layoutX="507.0" layoutY="95.0" prefHeight="27.0" prefWidth="161.0" text="Nom+Prenom" textFill="#6f6f6f">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="som" layoutX="293.0" layoutY="155.0" prefHeight="27.0" prefWidth="161.0" text="SOM" textFill="#6f6f6f">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="txt_date_naiss_prof" layoutX="236.0" layoutY="259.0" prefHeight="35.0" prefWidth="191.0" promptText="Ex ;17/07/2000" style="-fx-border-color: #24ACF2; -fx-border-width: 0 0 1px 0; -fx-background-color: transparent; -fx-background-insets: 0,0 0 1 0;" styleClass="my-date-picker" />
+                <Label layoutX="67.0" layoutY="264.0" text="Date de naissance :" textFill="#6f6f6f">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Pane layoutX="471.0" layoutY="214.0" prefHeight="342.0" prefWidth="3.0" style="-fx-background-color: #24ACF2;" />
+                <TextField fx:id="txt_email" layoutX="236.0" layoutY="461.0" prefHeight="35.0" prefWidth="191.0" promptText="Omarouhga12@mail.com" style="-fx-border-color: #24ACF2;" stylesheets="@../../resources/Styles/MaterialDesign.css" />
+                <TextField fx:id="txt_tele" layoutX="666.0" layoutY="461.0" prefHeight="35.0" prefWidth="191.0" promptText="+212 762271299" style="-fx-border-color: #24ACF2;" stylesheets="@../../resources/Styles/MaterialDesign.css" />
+                <Label layoutX="156.0" layoutY="466.0" text="Email :" textFill="#6f6f6f">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="556.0" layoutY="466.0" text="Téléphone :" textFill="#6f6f6f">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="588.0" layoutY="264.0" text="Sexe :" textFill="#6f6f6f">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Text fx:id="lbl_sexe" layoutX="731.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Homme">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="txt_userename" layoutX="666.0" layoutY="332.0" prefHeight="35.0" prefWidth="191.0" promptText="Ex :Omar ouhga" style="-fx-border-color: #24ACF2;" stylesheets="@../../resources/Styles/MaterialDesign.css" />
+                <TextField fx:id="txt_mdp" layoutX="666.0" layoutY="403.0" prefHeight="35.0" prefWidth="191.0" promptText="Ex : AZERTY" style="-fx-border-color: #24ACF2;" stylesheets="@../../resources/Styles/MaterialDesign.css" />
+                <Label layoutX="551.0" layoutY="337.0" text="user name" textFill="#6f6f6f">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="536.0" layoutY="408.0" text="Mot de passe :" textFill="#6f6f6f">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="163.0" layoutY="337.0" text="Nom :" textFill="#6f6f6f">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btn_modifier" layoutX="359.0" layoutY="599.0" mnemonicParsing="false" onAction="#Modifier_Enseignant" prefHeight="46.0" prefWidth="225.0" style="-fx-border-radius: 10px;" stylesheets="@../../resources/Styles/LoginStyling.css" text="Mettre à jour mes données" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Label layoutX="387.0" layoutY="30.0" text="Mon Profile" textFill="#6f6f6f" underline="true">
+                    <font>
+                        <Font name="Russo One" size="29.0" />
+                    </font>
+                </Label>
+                <Label layoutX="249.0" layoutY="100.0" text="Bienvenue Chér (e) professeur Mr/Mme">
+                    <font>
+                        <Font name="Lato Black" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="233.0" layoutY="160.0" text="SOM :">
+                    <font>
+                        <Font name="Lato Black" size="14.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="txt_nom" layoutX="236.0" layoutY="332.0" prefHeight="35.0" prefWidth="191.0" promptText="Ex : OUHAGUA" style="-fx-border-color: #24ACF2;" stylesheets="@../../resources/Styles/MaterialDesign.css" />
+            <Label layoutX="147.0" layoutY="408.0" text="Prenom :" textFill="#6f6f6f">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_prenom" layoutX="236.0" layoutY="398.0" prefHeight="35.0" prefWidth="191.0" promptText="EX :Omar" style="-fx-border-color: #24ACF2;" stylesheets="@../../resources/Styles/MaterialDesign.css" />
+            </children>
+        </Pane>
+        <Pane fx:id="panelNotesProf" layoutX="248.0" layoutY="-4.0" prefHeight="680.0" prefWidth="928.0" style="-fx-background-color: white;">
+            <children>
+                <Label layoutX="329.0" layoutY="30.0" text="Gestion des notes" textFill="#6f6f6f" underline="true">
+                    <font>
+                        <Font name="Russo One" size="29.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tableView_GestionNotes" editable="true" layoutX="22.0" layoutY="166.0" prefHeight="504.0" prefWidth="806.0" stylesheets="@../../resources/Styles/LoginStyling.css">
+                    <columns>
+                        <TableColumn fx:id="col_apogee" editable="false" prefWidth="152.79998779296875" resizable="false" text="apogee">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="code_massar" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_nomComplet" editable="false" prefWidth="159.19998168945312" resizable="false" text="Nom Complet">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="nom_complet" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_cntrl1" minWidth="5.60003662109375" prefWidth="111.20001220703125" resizable="false" text="Controle 1">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="control_1" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_cntrl2" prefWidth="128.40008544921875" resizable="false" text="Controle 2">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="control_2" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_cntrl3" prefWidth="128.7999267578125" resizable="false" text="Examen final">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="control_3" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_moyenne" editable="false" prefWidth="124.00006103515625" resizable="false" text="Moyenne">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="moyenne" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                    <effect>
+                        <DropShadow color="#24acf0" radius="21.915" width="68.66" />
+                    </effect>
+                </TableView>
+                <ComboBox fx:id="CB_classe" layoutX="371.0" layoutY="103.0" onAction="#CB_grp_gestionNotes_selected" prefHeight="30.0" prefWidth="180.0" promptText="Classes" style="-fx-border-color: #24ACF2;" stylesheets="@../../resources/Styles/MaterialDesign.css" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="601.0" layoutY="95.0" mnemonicParsing="false" onAction="#refh" prefHeight="46.0" prefWidth="178.0" stylesheets="@../../resources/Styles/style.css">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="24" wrappingWidth="15.428571701049805" />
+               </graphic></Button>
+            </children>
+        </Pane>
+
+
+    </children>
+    <effect>
+        <DropShadow color="#1b1eeb" />
+    </effect>
+</AnchorPane>

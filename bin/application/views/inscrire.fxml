@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="854.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.InscrireController">
+    <children>
+        <Pane layoutX="84.0" layoutY="48.0" prefHeight="432.0" prefWidth="687.0">
+            <children>
+                <Button fx:id="btnSignin" layoutX="248.0" layoutY="305.0" mnemonicParsing="false" onAction="#sinscrire_Click" prefHeight="43.0" prefWidth="192.0" stylesheets="@../../resources/Styles/LoginStyling.css" text="S'inscrire">
+               <font>
+                  <Font size="19.0" />
+               </font></Button>
+                <Button fx:id="btnSignup" layoutX="586.0" layoutY="385.0" mnemonicParsing="false" onAction="#retour" prefHeight="34.0" prefWidth="99.0" stylesheets="@../../resources/Styles/LoginStyling.css" text="S'authentifier" />
+                <Separator layoutX="562.0" layoutY="364.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="31.0" />
+                <Label alignment="CENTER" layoutX="545.0" layoutY="391.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #fff;" text="Ou" textFill="#5b5a5a">
+                    <font>
+                        <Font name="Segoe UI" size="12.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="tele" layoutX="407.0" layoutY="24.0" prefHeight="40.0" prefWidth="230.0" promptText="Telephone" />
+                <PasswordField fx:id="mdp" layoutX="407.0" layoutY="225.0" prefHeight="40.0" prefWidth="230.0" promptText="Mot de passe" stylesheets="@../../resources/Styles/LoginStyling.css" />
+                <TextField fx:id="apogee" layoutX="28.0" layoutY="24.0" prefHeight="40.0" prefWidth="230.0" promptText="apogee" />
+                <TextField fx:id="nom" layoutX="28.0" layoutY="94.0" prefHeight="40.0" prefWidth="230.0" promptText="Nom " stylesheets="@../../resources/Styles/LoginStyling.css" />
+                <TextField fx:id="email" layoutX="28.0" layoutY="225.0" prefHeight="40.0" prefWidth="230.0" promptText="Email" stylesheets="@../../resources/Styles/LoginStyling.css" />
+                
+                <ComboBox fx:id="classe" layoutX="407.0" layoutY="94.0" prefHeight="40.0" prefWidth="230.0" promptText="classe" />
+                <TextField fx:id="username" layoutX="407.0" layoutY="159.0" prefHeight="40.0" prefWidth="230.0" promptText="user name" stylesheets="@../../resources/Styles/LoginStyling.css" />
+            <TextField fx:id="prenom" layoutX="30.0" layoutY="159.0" prefHeight="40.0" prefWidth="230.0" promptText="Prénom" stylesheets="@../../resources/Styles/style.css" />
+            </children>
+        </Pane>
+        <ImageView fitHeight="41.0" fitWidth="34.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/images/logo-usms.fw_-150x150.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
