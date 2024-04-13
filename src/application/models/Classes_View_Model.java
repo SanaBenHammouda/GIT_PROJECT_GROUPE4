@@ -54,6 +54,10 @@ public class Classes_View_Model {
 		this.nbr_etud_classe = nbr_etud_classe;
 	}
 	
+public double calculateAverageNumberOfStudents(int totalNumberOfClasses) {
+    return (double) nbr_etud_classe / totalNumberOfClasses;
+}
+
 	
 	
 }
